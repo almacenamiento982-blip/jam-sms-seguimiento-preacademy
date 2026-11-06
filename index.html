@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Pre-Academy · SMS de seguimiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#F4F5F7; --card:#fff; --ink:#111214; --ink2:#474B53; --ink3:#767B85; --line:#DDE0E5; --gold:#9A6B00; --ok:#1C7A45; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0D0E10; --card:#16181B; --ink:#ECEDEF; --ink2:#B3B7BE; --ink3:#868B94; --line:#2C3036; --gold:#E0B040; --ok:#4CC47E; } }
+* { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.55 Montserrat, system-ui, sans-serif; }
+.top { position:sticky; top:0; z-index:5; background:#0B0C0E; } .top .w { display:flex; justify-content:flex-end; align-items:center; gap:10px; padding:8px 16px; max-width:1060px; margin:0 auto; }
+.top span { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#868B94; }
+.seg { display:inline-flex; border:1px solid #3A3F46; border-radius:999px; padding:2px; background:#16181B; }
+.seg button { border:0; background:transparent; color:#B3B7BE; font:700 12px/1 Montserrat, sans-serif; padding:8px 14px; border-radius:999px; cursor:pointer; min-height:32px; }
+.seg button[aria-pressed="true"] { background:#E7B43A; color:#111214; }
+.wrap { max-width:1060px; margin:0 auto; padding:26px 16px 60px; }
+.lv { display:none; } :root[data-lang="es"] .lv[data-v="es"], :root[data-lang="en"] .lv[data-v="en"] { display:block; }
+.eyebrow { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin:0 0 6px; }
+h1 { font-size:28px; margin:0 0 6px; } .sub { color:var(--ink2); margin:0 0 24px; max-width:72ch; }
+.estado { display:inline-block; margin-left:6px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:999px; background:color-mix(in srgb, var(--gold) 18%, transparent); color:var(--gold); }
+.grid { display:grid; grid-template-columns:340px 1fr; gap:22px; align-items:start; } @media (max-width:820px) { .grid { grid-template-columns:1fr; } }
+.phone { background:#000; border-radius:38px; padding:12px; box-shadow:0 10px 30px rgba(0,0,0,.18); position:sticky; top:64px; }
+.screen { background:#fff; border-radius:28px; min-height:520px; overflow:hidden; color:#000; }
+.bar { text-align:center; padding:16px 10px 10px; border-bottom:1px solid #E5E5EA; background:#F7F7F7; }
+.bar .av { width:44px; height:44px; border-radius:50%; background:#111; color:#fff; display:grid; place-items:center; margin:0 auto 4px; font-weight:700; font-size:13px; }
+.bar b { font-size:13px; } .bar small { display:block; color:#8E8E93; font-size:11px; }
+.msgs { padding:18px 12px; } .hora { text-align:center; color:#8E8E93; font-size:11px; margin-bottom:10px; }
+.b { background:#E9E9EB; border-radius:18px; padding:10px 13px; max-width:86%; font-size:15px; line-height:1.38; } .b a { color:#0A66D8; word-break:break-all; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:16px; }
+.card h2 { font-size:16px; margin:0 0 10px; }
+.tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:999px; background:color-mix(in srgb, var(--ok) 15%, transparent); color:var(--ok); margin-left:8px; vertical-align:2px; }
+.tag.alt { background:color-mix(in srgb, var(--gold) 16%, transparent); color:var(--gold); }
+.txt { font-size:16px; font-weight:600; background:var(--bg); border-radius:10px; padding:12px 14px; margin:6px 0 8px; } .mut { color:var(--ink3); }
+.meta { font-size:13px; color:var(--ink3); margin:0; } .es { font-size:13.5px; color:var(--ink2); margin:6px 0 0; } .es:empty { display:none; }
+dl { margin:0; display:grid; grid-template-columns:150px 1fr; gap:8px 14px; font-size:14px; } dt { color:var(--ink3); font-weight:600; } dd { margin:0; color:var(--ink2); }
+@media (max-width:560px) { dl { grid-template-columns:1fr; gap:2px; } dd { margin-bottom:8px; } }
+.btn { display:inline-block; margin-top:14px; padding:11px 18px; border-radius:999px; background:var(--ink); color:var(--bg); text-decoration:none; font-weight:700; font-size:13px; border:0; cursor:pointer; font-family:inherit; }
+.btn.sec { background:transparent; color:var(--ink); border:1px solid var(--line); }
+.flujo { display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-size:13px; font-weight:700; } .flujo span { background:var(--bg); padding:6px 11px; border-radius:999px; } .flujo i { font-style:normal; color:var(--ink3); }
+ul { margin:12px 0 0; padding-left:18px; color:var(--ink2); font-size:14px; } li { margin:4px 0; }
+</style></head><body>
+<nav class="top" aria-label="Idioma / Language"><div class="w"><span>Idioma · Language</span><div class="seg" role="group" aria-label="Idioma / Language">
+<button type="button" data-l="es" aria-pressed="true" lang="es">ES</button><button type="button" data-l="en" aria-pressed="false" lang="en">EN</button></div></div></nav>
+<main class="wrap"><div class="lv" data-v="es" lang="es">
+  <p class="eyebrow">Juventus Academy Miami · Pre-Academy · seguimiento por SMS</p>
+  <h1>Cómo le llega el SMS a la familia</h1>
+  <p class="sub">SMS para los contactos de WhatsApp de la campaña de Pre-Academy que todavía no se inscribieron. El enlace lleva a la página de Pre-Academy (jacademymiami.com/pre-academy), donde eligen sede y se inscriben en PlayMetrics.
+     <span class="estado">Por aprobar</span></p>
+  <div class="grid">
+    <div class="phone"><div class="screen">
+      <div class="bar"><div class="av">JAM</div><b>Juventus Academy Miami</b><small>Text Message · SMS</small></div>
+      <div class="msgs"><div class="hora">Hoy 11:00 a. m.</div>
+        <div class="b burbuja"><span class="txt-b">Juventus Academy Miami Pre-Academy: 5 locations, first month FREE at 3 of them. Sign up: </span><a href="https://jacademymiami.com/pre-academy/?utm_source=sms&utm_medium=sms&utm_campaign=preacademy_seguimiento&utm_content=revision" target="_blank" rel="noopener">jacademy.getvozzi.com/-/xxxxx</a></div>
+      </div></div></div>
+    <div>
+      <div class="card"><h2>Texto propuesto · inglés <span class="tag">Recomendado</span></h2>
+        <div class="txt">Juventus Academy Miami Pre-Academy: 5 locations, first month FREE at 3 of them. Sign up: <span class="mut">[enlace]</span></div>
+        <p class="meta">88 caracteres + enlace = <b>1 segmento</b>.</p>
+        <p class="es">En español: "Pre-Academy de Juventus Academy Miami: 5 sedes, primer mes GRATIS en 3 de ellas. Inscríbete: [enlace]".</p>
+        <button class="btn sec" type="button" data-ver="en">Ver en el teléfono</button></div>
+      <div class="card"><h2>Alternativa · español <span class="tag alt">Opción</span></h2>
+        <div class="txt">Juventus Academy Miami: Pre-Academy en 5 sedes, primer mes GRATIS en 3. Inscribete aqui: <span class="mut">[enlace]</span></div>
+        <p class="meta">88 caracteres + enlace = 1 segmento. Va sin tildes: con tildes el SMS pasa a 2 segmentos.</p>
+        <p class="es"></p>
+        <button class="btn sec" type="button" data-ver="es">Ver en el teléfono</button></div>
+      <div class="card"><h2>A quién y cuándo</h2>
+        <dl>
+          <dt>Envío 1</dt><dd><b>108 números</b> de la campaña (chat con la marca del anuncio o la etiqueta PRE ACADEMY en WhatsApp).</dd>
+          <dt>Envío 2</dt><dd><b>242 números</b> que escribieron desde el 21-sep sin marca del anuncio. Una semana después, solo si el envío 1 funciona.</dd>
+          <dt>Fuera de la lista</dt><dd>Familias ya inscritas en Pre-Academy u otro programa 2026-27 y números extranjeros. Antes de cada envío se vuelve a cruzar con PlayMetrics.</dd>
+        </dl>
+        <a class="btn" href="https://docs.google.com/spreadsheets/d/1qAcWZMunyGhQPHbXhJBpMKR8RcBa59FZiZNU1yMKk0E/edit" target="_blank" rel="noopener">Ver los números del envío 1 y 2 ↗</a>
+        <p class="meta" style="margin-top:8px">Hoja de Google privada, con una pestaña por envío: solo la abren las personas con acceso. Los teléfonos no se publican en esta página.</p>
+      </div>
+      <div class="card"><h2>A dónde lleva el enlace</h2>
+        <div class="flujo"><span>SMS</span><i>→</i><span>jacademymiami.com/pre-academy</span><i>→</i><span>Elige su sede</span><i>→</i><span>"Register" → PlayMetrics</span></div>
+        <ul>
+          <li>Sin sede fija: no sabemos la sede de cada familia; la página muestra las 5 con dirección y horario.</li>
+          <li>El mes gratis dice "en 3" (Downtown, Miramar y Mater Bay; Doral y Davie no lo tienen).</li>
+          <li>Sin precios, sin nombre (estos números no lo tienen guardado) y sin pedir que respondan.</li>
+          <li>Medición: clics en Vozzi, visitas con la etiqueta preacademy_seguimiento en Google Analytics, "Register" con el píxel de Meta y, a los 7 días, inscritos y pagos en PlayMetrics.</li>
+        </ul>
+        <a class="btn sec" href="https://jacademymiami.com/pre-academy/?utm_source=sms&utm_medium=sms&utm_campaign=preacademy_seguimiento&utm_content=revision" target="_blank" rel="noopener">Probar el enlace ↗</a>
+      </div>
+    </div>
+  </div>
+</div><div class="lv" data-v="en" lang="en">
+  <p class="eyebrow">Juventus Academy Miami · Pre-Academy · SMS follow-up</p>
+  <h1>How the SMS reaches the family</h1>
+  <p class="sub">SMS for the Pre-Academy campaign WhatsApp contacts who have not enrolled yet. The link takes them to the Pre-Academy page (jacademymiami.com/pre-academy), where they pick a location and enroll in PlayMetrics.
+     <span class="estado">Pending approval</span></p>
+  <div class="grid">
+    <div class="phone"><div class="screen">
+      <div class="bar"><div class="av">JAM</div><b>Juventus Academy Miami</b><small>Text Message · SMS</small></div>
+      <div class="msgs"><div class="hora">Today 11:00 AM</div>
+        <div class="b burbuja"><span class="txt-b">Juventus Academy Miami Pre-Academy: 5 locations, first month FREE at 3 of them. Sign up: </span><a href="https://jacademymiami.com/pre-academy/?utm_source=sms&utm_medium=sms&utm_campaign=preacademy_seguimiento&utm_content=revision" target="_blank" rel="noopener">jacademy.getvozzi.com/-/xxxxx</a></div>
+      </div></div></div>
+    <div>
+      <div class="card"><h2>Proposed text · English <span class="tag">Recommended</span></h2>
+        <div class="txt">Juventus Academy Miami Pre-Academy: 5 locations, first month FREE at 3 of them. Sign up: <span class="mut">[link]</span></div>
+        <p class="meta">88 characters + link = <b>1 segment</b>.</p>
+        <p class="es"></p>
+        <button class="btn sec" type="button" data-ver="en">Show on the phone</button></div>
+      <div class="card"><h2>Alternative · Spanish <span class="tag alt">Option</span></h2>
+        <div class="txt">Juventus Academy Miami: Pre-Academy en 5 sedes, primer mes GRATIS en 3. Inscribete aqui: <span class="mut">[link]</span></div>
+        <p class="meta">88 characters + link = 1 segment. No accents on purpose: with accents the SMS becomes 2 segments.</p>
+        <p class="es">In English: "Juventus Academy Miami: Pre-Academy at 5 locations, first month FREE at 3. Sign up here: [link]".</p>
+        <button class="btn sec" type="button" data-ver="es">Show on the phone</button></div>
+      <div class="card"><h2>Who and when</h2>
+        <dl>
+          <dt>Send 1</dt><dd><b>108 numbers</b> from the campaign (chat with the ad label or the PRE ACADEMY tag in WhatsApp).</dd>
+          <dt>Send 2</dt><dd><b>242 numbers</b> that messaged since Sep 21 without the ad label. One week later, only if send 1 works.</dd>
+          <dt>Not on the list</dt><dd>Families already enrolled in Pre-Academy or another 2026-27 program, and international numbers. The list is checked against PlayMetrics again before each send.</dd>
+        </dl>
+        <a class="btn" href="https://docs.google.com/spreadsheets/d/1qAcWZMunyGhQPHbXhJBpMKR8RcBa59FZiZNU1yMKk0E/edit" target="_blank" rel="noopener">See the numbers for send 1 and 2 ↗</a>
+        <p class="meta" style="margin-top:8px">Private Google Sheet, one tab per send: only people with access can open it. Phone numbers are not published on this page.</p>
+      </div>
+      <div class="card"><h2>Where the link goes</h2>
+        <div class="flujo"><span>SMS</span><i>→</i><span>jacademymiami.com/pre-academy</span><i>→</i><span>Picks a location</span><i>→</i><span>"Register" → PlayMetrics</span></div>
+        <ul>
+          <li>No fixed location: we do not know each family’s location, so the page shows all 5 with address and schedule.</li>
+          <li>The free month says "at 3" (Downtown, Miramar and Mater Bay; Doral and Davie do not offer it).</li>
+          <li>No prices, no name (these numbers have no saved name) and no request to reply.</li>
+          <li>Measurement: Vozzi clicks, visits tagged preacademy_seguimiento in Google Analytics, "Register" with the Meta pixel and, after 7 days, enrollments and payments in PlayMetrics.</li>
+        </ul>
+        <a class="btn sec" href="https://jacademymiami.com/pre-academy/?utm_source=sms&utm_medium=sms&utm_campaign=preacademy_seguimiento&utm_content=revision" target="_blank" rel="noopener">Try the link ↗</a>
+      </div>
+    </div>
+  </div>
+</div></main><script>
+(function () {
+  var r = document.documentElement, bs = document.querySelectorAll('.seg button');
+  var TX = { en: "Juventus Academy Miami Pre-Academy: 5 locations, first month FREE at 3 of them. Sign up: ", es: "Juventus Academy Miami: Pre-Academy en 5 sedes, primer mes GRATIS en 3. Inscribete aqui: " };
+  function set(l, g) { r.setAttribute('data-lang', l); r.setAttribute('lang', l);
+    document.title = l === 'en' ? 'Pre-Academy · SMS follow-up' : 'Pre-Academy · SMS de seguimiento';
+    bs.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.l === l ? 'true' : 'false'); });
+    if (g) { try { localStorage.setItem('jam-sms-lang', l); } catch (e) {} } }
+  var q = (location.search.match(/[?&]lang=(en|es)/) || [])[1], s = null; try { s = localStorage.getItem('jam-sms-lang'); } catch (e) {}
+  set(q || s || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en'), false);
+  bs.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.l, true); }); });
+  document.querySelectorAll('[data-ver]').forEach(function (b) { b.addEventListener('click', function () {
+    var t = TX[b.dataset.ver]; document.querySelectorAll('.txt-b').forEach(function (x) { x.textContent = t; }); }); });
+})();
+</script></body></html>
